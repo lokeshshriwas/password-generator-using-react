@@ -1,0 +1,68 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.main-container{
+  height: 100vh;
+  width: 100vw;
+  background-color: #212121;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.main-container h1{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 10px 30px;
+}
+
+.input-container{
+  display: flex;
+
+}
+
+.input-container button, input{
+  padding: 10px 20px;
+}
+
+.input-container button{
+  background-color: green;
+  color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: none;
+} 
+
+.input-container input{
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: none;
+  width: 300px;
+  font-size: 16px;
+}
+
+.dependency-container{
+  height: 40px;
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.depend{
+  width: fit-content;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+
+}
+
+.depend input{
+  margin-right: 5px;
+}
