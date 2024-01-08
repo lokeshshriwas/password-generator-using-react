@@ -1,7 +1,5 @@
-import { useState } from "react";
+import { useState,  useCallback, useEffect, useRef } from "react";
 import "./App.css";
-import { useCallback } from "react";
-import { useEffect } from "react";
 
 function App() {
   let [password, setPassword] = useState("");
@@ -21,9 +19,17 @@ function App() {
       
     }
     setPassword(pass)
-  }, [length, numAllowed, charAllowed, password])
+  }, [length, numAllowed, charAllowed, setPassword])
 
-  useEffect(passwordGenerator, [length, numAllowed, charAllowed])
+
+  let passwordRef = useRef(null)
+
+  let copyToClipboard = useCallback(()=>{
+    passwordRef.current?.select()
+    window.navigator.clipboard.writeText(password)
+  })
+
+  useEffect(passwordGenerator, [length, numAllowed, charAllowed, passwordGenerator])
 
 
   return (
@@ -31,8 +37,8 @@ function App() {
       <div className="main-container">
         <h1>Password Generator App</h1>
         <div className="input-container">
-          <input type="text" placeholder="passwords" value={password} readOnly/>
-          <button>COPY</button>
+          <input type="text" placeholder="passwords" value={password} readOnly ref={passwordRef}/>
+          <button onClick={copyToClipboard} className="copybtn">COPY</button>
         </div>
         <div className="dependency-container">
           <div className="depend">

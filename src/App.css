@@ -66,3 +66,8 @@
 .depend input{
   margin-right: 5px;
 }
+
+.copybtn:hover{
+    background-color: rgb(2, 78, 2);
+}
+
